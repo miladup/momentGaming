@@ -6,7 +6,7 @@
     <title>PlaySphere</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/code.js" defer></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
   <header>
@@ -18,13 +18,31 @@
     </nav>
   </header>
 
-  <div class="stars" data-rating="0">
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-  </div>
+  <main class="page-jeu">
+
+    <div class="main-jeu">
+        <img id="jeu-image" alt=" ">
+
+        <div class="info-jeu">
+            <h1 id="titre-jeu"></h1>
+
+            <div class="note-jeu">
+              <div id="chiffre-note" ></div>
+              <div id="etoile-note" ></div>
+            </div>
+
+            <p>Date de sortie : <span id="date-jeu"></span></p>
+            <p>Genre : <span id="genre-jeu"></span></p>
+            <p>Plateformes : <span id="plateformes-jeu"></span></p>
+        </div>
+    </div>
+
+    <section class="autres-jeux">
+        <h3>Autres jeux de la catégorie</h3>
+        <div id="container-autres-jeux"></div>
+    </section>
+
+</main>
 
 
   <footer>
