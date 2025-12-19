@@ -14,7 +14,6 @@ async function loadGameData() {
     }
 }
 
-
 loadGameData();
 
 function displayGame(game) {
