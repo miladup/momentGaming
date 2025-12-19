@@ -1,3 +1,4 @@
+console.log(await callGameAPI())
 const API_KEY = "b501480da15a41aba372986f01efe13f";
 const params = new URLSearchParams(window.location.search);
 const gameId = params.get("id");
