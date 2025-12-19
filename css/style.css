@@ -1,68 +1,69 @@
 body {
-    font-family: "hyperspace-race-cap-variable", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+  font-family: "hyperspace-race-cap-variable", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    background-color: #243163;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    padding: 10px 30px;
-    position: fixed;
-    width: 100%;
-    box-sizing: border-box;
+  background-color: #243163;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 header img{
-    width: 10%;
-    margin: 5px;
+  width: 10%;
+  margin: 5px;
 }
 
 nav a {
-    color: #ffffff;
-    width: 25%;
-    margin-left: 20px;
-    font-size: 1.5rem;
-    text-decoration: none;
-}	
-
+  color: #ffffff;
+  width: 25%;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+ 
 main {
-	color: #243163;
-	margin: 50px;
-	font-size: 1.0rem;
-	text-decoration: none;
+  color: #243163;
+  margin: 50px;
+  font-size: 1.0rem;
+  text-decoration: none;
 }
 
 #maingame {
-	width: 100%;
+  width: 100%;
 }
-footer {
-    background-color: #243163;
-    padding: 60px 0;
-    color: white;
-    font-family: "hyperspace-race-cap-variable", sans-serif;
-  }
-  
-.footer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
- }
-  
- #LogoFooter{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
 
-  .footer-contact h3,
+footer {
+  background-color: #243163;
+  padding: 60px 0;
+  color: white;
+  font-family: "hyperspace-race-cap-variable", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+#LogoFooter{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-contact h3,
 .footer-plan h3 {
   font-size: 22px;
   margin-bottom: 15px;
@@ -111,16 +112,17 @@ footer {
   padding: 0 40px;
 }
 
-
 #jeu-image {
   width: 420px;
   height: 520px;
   border-radius: 12px;
   object-fit: cover;
 }
+
 #titre-jeu{
   color: #243163;
 }
+
 .info-jeu {
   max-width: 500px;
 }
@@ -130,8 +132,9 @@ footer {
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .note-jeu {
-  margin-bottom: 25px;
+margin-bottom: 25px;
 }
 
 #chiffre-note {
@@ -160,6 +163,7 @@ footer {
   font-size: 16px;
   line-height: 1.4;
 }
+
 .autres-jeux {
   margin-top: 90px;
 }
@@ -193,34 +197,59 @@ footer {
   font-size: 16px;
 }
 
+#stores-jeu a {
+  color:#28335f;
+  text-decoration: none;
+}
+
+#stores-jeu a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
+  header img{
+    width: 23%;
+    margin: 3px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin-left: 15px;
+  }
 
   .main-jeu {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   #jeu-image {
-      width: 100%;
-      max-width: 420px;
+    width: 100%;
+    max-width: 420px;
   }
 
   .info-jeu {
-      max-width: 100%;
-      text-align: center;
+    max-width: 100%;
+    text-align: center;
   }
 
   #etoile-note {
-      justify-content: center;
+    justify-content: center;
   }
 
   #container-autres-jeux {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
-  #container-autres-jeux {
-    display: flex;
-    justify-content: space-between;
-    gap: 70px;
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    }
+    
+  .footer-separator {
+    width: 80%;
+    height: 2px;
   }
 
 
@@ -255,5 +284,23 @@ footer {
 @media (max-width: 600px) {
   .game-card {
     width: 100%;
+    
+  #LogoFooter {
+    width: 150px;
+  }
+    
+  .footer-contact,
+  .footer-plan {
+    text-align: center;
+  }
+    
+  .footer-contact h3,
+  .footer-plan h3 {
+    font-size: 20px;
+  }
+    
+  .footer-contact p,
+  .footer-plan a {
+    font-size: 14px;
   }
 }
