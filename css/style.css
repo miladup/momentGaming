@@ -226,4 +226,34 @@ footer {
 
 }
 
+/* Styles for jeux.html page */
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: space-between;
+}
 
+.game-card {
+  width: calc(33.333% - 40px);
+  text-align: center;
+}
+
+.game-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background-color: #27315b;
+}
+
+@media (max-width: 1024px) {
+  .game-card {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    width: 100%;
+  }
+}
