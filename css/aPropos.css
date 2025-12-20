@@ -1,0 +1,142 @@
+.page-apropos {
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  padding: 0 40px;
+  color: #243163;
+  }
+  
+  .apropos-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+  }
+  
+  .apropos-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #243163;
+  }
+  
+  .apropos-intro {
+  font-size: 22px;
+  color: #5a6a9f;
+  margin-top: 10px;
+  }
+  
+  .apropos-content {
+  margin-bottom: 80px;
+  }
+  
+  .apropos-section {
+  margin-bottom: 50px;
+  }
+  
+  .apropos-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #243163;
+  border-bottom: 3px solid #243163;
+  padding-bottom: 10px;
+  }
+  
+  .apropos-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+  }
+  
+  .contact-section {
+  background-color: #f5f7fa;
+  padding: 50px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  }
+  
+  .contact-section h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #243163;
+  }
+  
+  .contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+  }
+  
+  .contact-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  }
+  
+  .contact-card:hover {
+  transform: translateY(-5px);
+  }
+  
+  .contact-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #243163;
+  }
+  
+  .contact-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  }
+  
+  .contact-card a {
+  color: #243163;
+  text-decoration: none;
+  }
+  
+  .contact-card a:hover {
+  text-decoration: underline;
+  }
+  
+  .contact-note {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  margin-top: 30px;
+  }
+  
+  @media (max-width: 900px) {
+  .page-apropos {
+  padding: 0 20px;
+  margin-top: 80px;
+  }
+  
+  .apropos-hero h1 {
+  font-size: 36px;
+  }
+  
+  .apropos-intro {
+  font-size: 18px;
+  }
+  
+  .apropos-section h2 {
+  font-size: 26px;
+  }
+  
+  .apropos-section p {
+  font-size: 16px;
+  }
+  
+  .contact-section {
+  padding: 30px 20px;
+  }
+  
+  .contact-cards {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  }
+  }
