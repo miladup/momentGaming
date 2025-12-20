@@ -1,7 +1,7 @@
 const API_KEY = "b501480da15a41aba372986f01efe13f";
 const BASE_URL = "https://api.rawg.io/api";
 
-// API
+// Recuperation API
 
 async function getLatestGames(limit = 3) {
   const res = await fetch(
@@ -19,62 +19,87 @@ async function getTopRatedGames(limit = 3) {
   return data.results;
 }
 
-// Interface
+// Fonction Carte de jeu
 
-function createGameCard(game) {
+function displayGameCard(game, containerId, showgenre = true) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
   const card = document.createElement("div");
-  card.className = "game-card";
+  card.classList.add("game-card");
 
-  // Image
+  // Image du jeu
   const img = document.createElement("img");
-  img.src = game.background_image || "";
-  img.alt = `Image de ${game.name}`;
+  img.src = game.background_image || "img/default-game.png";
+  img.alt = game.name;
 
-  // Titre
-  const title = document.createElement("h2");
+  // Titre du jeu
+  const title = document.createElement("h3");
   title.textContent = game.name;
+
+  // Étoiles
+  const etoileContainer = document.createElement("div");
+  etoileContainer.classList.add("etoile-note");
+  const maxEtoile = 5;
+  const roundedRating = Math.round(game.rating || 0);
+
+  for (let i = 1; i <= maxEtoile; i++) {
+    const etoile = document.createElement("span");
+    etoile.classList.add("star");
+    if (i <= roundedRating) etoile.classList.add("filled");
+    etoile.innerHTML = "★";
+    etoileContainer.appendChild(etoile);
+  }
+
+  // Genres
+let genres = '';
+  if (showgenre == true) {
+    genres = document.createElement("p");
+    genres.textContent =
+      "Genres : " + (game.genres?.map(g => g.name).join(", ") || "N/A");
+  }
 
   // Plateformes
   const platforms = document.createElement("p");
   platforms.textContent =
-    "Plateformes: " +
-    (game.platforms?.map(p => p.platform.name).join(", ") || "Non renseignées");
+    "Plateformes : " +
+    (game.platforms?.map(p => p.platform.name).join(", ") || "N/A");
 
-  // Note
-  const rating = document.createElement("p");
-  rating.textContent = `Note: ${game.rating ?? "N/A"}`;
+  // Ajout à la carte
+  card.append(img, title, etoileContainer, genres, platforms);
+  
+  // Rendre toute la carte cliquable
+  card.style.cursor = "pointer";
+  card.addEventListener("click", () => {
+    window.location.href = `DetailsJeu.html?id=${game.id}`;
+  });
 
-  card.append(img, title, platforms, rating);
-
-  return card;
+  container.appendChild(card);
 }
 
-// Page d'accueil
+// Chargement page d'accueil
 
 async function loadHomePage() {
   try {
     // Dernières sorties
     const latestGames = await getLatestGames(3);
 
-    // Image principale 
+    // Image principale
     if (latestGames[0]) {
       const mainImageDiv = document.getElementById("maingame");
       // Changer le background-image de la div
       mainImageDiv.style.backgroundImage = `url(${latestGames[0].background_image})`;
     }
 
-    const latestContainer = document.getElementById("latest-games");
-    latestGames.forEach(game => {
-      latestContainer.appendChild(createGameCard(game));
-    });
+    const containerId = "latest-games";
+    latestGames.forEach(game => displayGameCard(game, containerId, false)
+    );
 
     // Mieux notés
     const topRatedGames = await getTopRatedGames(3);
-    const topContainer = document.getElementById("top-rated-games");
+    const topContainerId = "top-rated-games";
 
-    topRatedGames.forEach(game => {
-      topContainer.appendChild(createGameCard(game));
-    });
+    topRatedGames.forEach(game => displayGameCard(game, topContainerId, false));
 
   } catch (error) {
     console.error("Erreur lors du chargement de la page :", error);
