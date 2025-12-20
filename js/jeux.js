@@ -32,26 +32,43 @@ function displayGameCard(game) {
   const card = document.createElement("div");
   card.classList.add("game-card");
 
+  // Image du jeu
   const img = document.createElement("img");
   img.src = game.background_image || "img/default-game.png";
   img.alt = game.name;
 
+  // Titre du jeu
   const title = document.createElement("h3");
   title.textContent = game.name;
 
-  const rating = document.createElement("p");
-  rating.textContent = createStars(game.rating);
+  // Étoiles
+  const etoileContainer = document.createElement("div");
+  etoileContainer.classList.add("etoile-note");
 
+  const maxEtoile = 5;
+  const roundedRating = Math.round(game.rating || 0);
+
+  for (let i = 1; i <= maxEtoile; i++) {
+    const etoile = document.createElement("span");
+    etoile.classList.add("star");
+    if (i <= roundedRating) etoile.classList.add("filled");
+    etoile.innerHTML = "★";
+    etoileContainer.appendChild(etoile);
+  }
+
+  // Genres
   const genres = document.createElement("p");
   genres.textContent =
     "Genres : " + (game.genres?.map(g => g.name).join(", ") || "N/A");
 
+  // Plateformes
   const platforms = document.createElement("p");
   platforms.textContent =
     "Plateformes : " +
     (game.platforms?.map(p => p.platform.name).join(", ") || "N/A");
 
-  card.append(img, title, rating, genres, platforms);
+  // Ajout à la carte
+  card.append(img, title, etoileContainer, genres, platforms);
   container.appendChild(card);
 }
 
