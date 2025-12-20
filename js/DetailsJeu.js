@@ -2,7 +2,6 @@ const API_KEY = "b501480da15a41aba372986f01efe13f";
 const params = new URLSearchParams(window.location.search);
 const gameId = params.get("id");
 
-
 async function loadGameData() {
     try {
         const response = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${API_KEY}`);
@@ -33,16 +32,13 @@ function displayGame(game) {
     });
     document.getElementById("plateformes-jeu").textContent = plateformes.join(", ");
     
-
     displayStores(game.stores);
-    
     displayRating(game.rating);
 }
 
 function displayStores(stores) {
     const storesContainer = document.getElementById("stores-jeu");
     
-
     if (!stores || stores.length === 0) {
         storesContainer.textContent = "Non disponible";
         return;
@@ -55,7 +51,6 @@ function displayStores(stores) {
         link.textContent = storeObj.store.name;
         link.target = "_blank"; 
         link.rel = "noopener noreferrer"; 
-        
         storesContainer.appendChild(link);
         
         if (index < stores.length - 1) {
@@ -104,7 +99,7 @@ async function displayAutresJeux(game) {
             
             const div = document.createElement("div");
             div.innerHTML = `
-                <a href="jeu.html?id=${jeu.id}">
+                <a href="DetailsJeu.html?id=${jeu.id}">
                     <img src="${jeu.background_image}" alt="${jeu.name}">
                     <p>${jeu.name}</p>
                 </a>

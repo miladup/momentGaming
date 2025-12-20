@@ -31,17 +31,6 @@ nav a {
   text-decoration: none;
 }
  
-main {
-  color: #243163;
-  margin: 50px;
-  font-size: 1.0rem;
-  text-decoration: none;
-}
-
-#maingame {
-  width: 100%;
-}
-
 footer {
   background-color: #243163;
   padding: 60px 0;

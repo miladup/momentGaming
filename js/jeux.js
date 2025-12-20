@@ -44,7 +44,6 @@ function displayGameCard(game) {
   // Étoiles
   const etoileContainer = document.createElement("div");
   etoileContainer.classList.add("etoile-note");
-
   const maxEtoile = 5;
   const roundedRating = Math.round(game.rating || 0);
 
@@ -69,6 +68,13 @@ function displayGameCard(game) {
 
   // Ajout à la carte
   card.append(img, title, etoileContainer, genres, platforms);
+  
+  // Rendre toute la carte cliquable
+  card.style.cursor = "pointer";
+  card.addEventListener("click", () => {
+    window.location.href = `DetailsJeu.html?id=${game.id}`;
+  });
+
   container.appendChild(card);
 }
 
