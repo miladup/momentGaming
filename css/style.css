@@ -31,10 +31,17 @@ nav a {
   text-decoration: none;
 }
  
+
 main {
 	color: #243163;
 	font-size: 1.0rem;
 
+}
+
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .game-card {
@@ -44,15 +51,11 @@ main {
     text-align: center;
 }
 
-#maingame {
+#mainbanner {
 	width: 100%;
   margin-bottom: 40px;
   background-size: cover;
   height: 250px;
-}
-
-.section {
-    margin: 50px;
 }
 
 .container {
@@ -66,20 +69,124 @@ main {
     flex-wrap:wrap;
  }
 
-
-#maingame img {
-  width: 100%;
-  aspect-ratio: 16 / 9; 
-  object-fit: cover;
-}
-
 .container img {
     width: 200px;
     height: 300px;
     object-fit: cover;
 }
 
- 
+.game-card .etoile-note {
+  padding: 0 20px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.game-card .star {
+  color: #c4c4c4;
+  font-size: 20px;
+}
+
+.game-card .star.filled {
+  color: #f5b301;
+}
+
+.game-card {
+  width: calc(33.333% - 40px);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background-color: #27315b;
+}
+
+.game-card h3 {
+  padding: 15px 20px 10px;
+  margin: 0;
+  font-size: 20px;
+  color: #243163;
+}
+
+.game-card .etoile-note {
+  padding: 0 20px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.game-card .star {
+  color: #c4c4c4;
+  font-size: 20px;
+}
+
+.game-card .star.filled {
+  color: #f5b301;
+}
+
+.game-card p {
+  padding: 5px 20px;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+.game-card p:last-child {
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .game-card {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 900px) {
+  .games-list {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    width: 100%;
+  } 
+  
+  #LogoFooter {
+    width: 150px;
+  }
+  
+  .footer-contact,
+  .footer-plan {
+    text-align: center;
+  }
+  
+  .footer-contact h3,
+  .footer-plan h3 {
+    font-size: 20px;
+  }
+  
+  .footer-contact p,
+  .footer-plan a {
+    font-size: 14px;
+  }
+} 
 footer {
   background-color: #243163;
   padding: 60px 0;
@@ -138,259 +245,9 @@ footer {
 .footer-plan a:hover {
   text-decoration: underline;
 }
-/* Page Détail d'un jeu */
-.main-jeu {
-  display: flex;
-  gap: 80px;
-  align-items: flex-start;
-}
 
-.page-jeu {
-  max-width: 1300px;
-  margin: 80px auto;
-  padding: 0 40px;
-}
 
-#jeu-image {
-  width: 420px;
-  height: 520px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-#titre-jeu{
-  color: #243163;
-}
-
-.info-jeu {
-  max-width: 500px;
-}
-
-.info-jeu h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.note-jeu {
-margin-bottom: 25px;
-}
-
-#chiffre-note {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #243163;
-}
-
-#etoile-note {
-  display: flex;
-  gap: 6px;
-  font-size: 26px;
-}
-
-.star {
-  color: #c4c4c4;
-}
-
-.star.filled {
-  color: #f5b301;
-}
-
-.info-jeu p {
-  margin: 14px 0;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.autres-jeux {
-  margin-top: 90px;
-}
-
-.autres-jeux h3 {
-  font-size: 22px;
-  margin-bottom: 40px;
-  color: #28335f;
-}
-
-#container-autres-jeux {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
-}
-
-#container-autres-jeux a {
-  text-decoration: none;
-  color: inherit;
-}
-
-#container-autres-jeux img {
-  width: 100%;
-  height: 280px;
-  background-color: #28335f;
-  object-fit: cover;
-}
-
-#container-autres-jeux p {
-  margin-top: 12px;
-  font-size: 16px;
-}
-
-#stores-jeu a {
-  color:#28335f;
-  text-decoration: none;
-}
-
-#stores-jeu a:hover {
-  color: black;
-  text-decoration: underline;
-}
-/* Page À propos */
-.page-apropos {
-  max-width: 1200px;
-  margin: 100px auto 50px;
-  padding: 0 40px;
-  color: #243163;
-  }
-  
-  .apropos-hero {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 40px 0;
-  }
-  
-  .apropos-hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #243163;
-  }
-  
-  .apropos-intro {
-  font-size: 22px;
-  color: #5a6a9f;
-  margin-top: 10px;
-  }
-  
-  .apropos-content {
-  margin-bottom: 80px;
-  }
-  
-  .apropos-section {
-  margin-bottom: 50px;
-  }
-  
-  .apropos-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #243163;
-  border-bottom: 3px solid #243163;
-  padding-bottom: 10px;
-  }
-  
-  .apropos-section p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #333;
-  }
-  
-  .contact-section {
-  background-color: #f5f7fa;
-  padding: 50px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  }
-  
-  .contact-section h2 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #243163;
-  }
-  
-  .contact-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 30px;
-  }
-  
-  .contact-card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  }
-  
-  .contact-card:hover {
-  transform: translateY(-5px);
-  }
-  
-  .contact-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #243163;
-  }
-  
-  .contact-card p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  }
-  
-  .contact-card a {
-  color: #243163;
-  text-decoration: none;
-  }
-  
-  .contact-card a:hover {
-  text-decoration: underline;
-  }
-  
-  .contact-note {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
-  font-style: italic;
-  margin-top: 30px;
-  }
-  
-  /* Responsive pour la page À propos */
-  @media (max-width: 900px) {
-  .page-apropos {
-  padding: 0 20px;
-  margin-top: 80px;
-  }
-  
-  .apropos-hero h1 {
-  font-size: 36px;
-  }
-  
-  .apropos-intro {
-  font-size: 18px;
-  }
-  
-  .apropos-section h2 {
-  font-size: 26px;
-  }
-  
-  .apropos-section p {
-  font-size: 16px;
-  }
-  
-  .contact-section {
-  padding: 30px 20px;
-  }
-  
-  .contact-cards {
-  grid-template-columns: 1fr;
-  gap: 20px;
-  }
-  }
-
-/* Responsive Page Détail d'un jeu + header et footer */
+/* Responsive header et footer */
 @media (max-width: 900px) {
   header img{
     width: 23%;
@@ -402,29 +259,6 @@ margin-bottom: 25px;
     margin-left: 15px;
   }
 
-  .main-jeu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #jeu-image {
-    width: 100%;
-    max-width: 420px;
-  }
-
-  .info-jeu {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  #etoile-note {
-    justify-content: center;
-  }
-
-  #container-autres-jeux {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
   .footer-container {
     flex-direction: column;
     gap: 30px;
@@ -436,200 +270,4 @@ margin-bottom: 25px;
     height: 2px;
   }
 
-
 }
-
-/* Styles for jeux.html page */
-.games-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  justify-content: space-between;
-}
-
-.game-card {
-  width: calc(33.333% - 40px);
-  text-align: center;
-}
-
-.game-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  background-color: #27315b;
-}
-
-@media (max-width: 1024px) {
-  .game-card {
-    width: calc(50% - 30px);
-  }
-}
-
-@media (max-width: 600px) {
-  .game-card {
-    width: 100%;
-    
-  #LogoFooter {
-    width: 150px;
-  }
-    
-  .footer-contact,
-  .footer-plan {
-    text-align: center;
-  }
-    
-  .footer-contact h3,
-  .footer-plan h3 {
-    font-size: 20px;
-  }
-    
-  .footer-contact p,
-  .footer-plan a {
-    font-size: 14px;
-  }
-}
-
-/* Page À propos */
-.page-apropos {
-  max-width: 1200px;
-  margin: 100px auto 50px;
-  padding: 0 40px;
-  color: #243163;
-  }
-  
-  .apropos-hero {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 40px 0;
-  }
-  
-  .apropos-hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #243163;
-  }
-  
-  .apropos-intro {
-  font-size: 22px;
-  color: #5a6a9f;
-  margin-top: 10px;
-  }
-  
-  .apropos-content {
-  margin-bottom: 80px;
-  }
-  
-  .apropos-section {
-  margin-bottom: 50px;
-  }
-  
-  .apropos-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #243163;
-  border-bottom: 3px solid #243163;
-  padding-bottom: 10px;
-  }
-  
-  .apropos-section p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #333;
-  }
-  
-  .contact-section {
-  background-color: #f5f7fa;
-  padding: 50px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  }
-  
-  .contact-section h2 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #243163;
-  }
-  
-  .contact-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 30px;
-  }
-  
-  .contact-card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  }
-  
-  .contact-card:hover {
-  transform: translateY(-5px);
-  }
-  
-  .contact-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #243163;
-  }
-  
-  .contact-card p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  }
-  
-  .contact-card a {
-  color: #243163;
-  text-decoration: none;
-  }
-  
-  .contact-card a:hover {
-  text-decoration: underline;
-  }
-  
-  .contact-note {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
-  font-style: italic;
-  margin-top: 30px;
-  }
-  
-  /* Responsive pour la page À propos */
-  @media (max-width: 900px) {
-  .page-apropos {
-  padding: 0 20px;
-  margin-top: 80px;
-  }
-  
-  .apropos-hero h1 {
-  font-size: 36px;
-  }
-  
-  .apropos-intro {
-  font-size: 18px;
-  }
-  
-  .apropos-section h2 {
-  font-size: 26px;
-  }
-  
-  .apropos-section p {
-  font-size: 16px;
-  }
-  
-  .contact-section {
-  padding: 30px 20px;
-  }
-  
-  .contact-cards {
-  grid-template-columns: 1fr;
-  gap: 20px;
-  }
-  }
