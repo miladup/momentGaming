@@ -86,7 +86,7 @@ async function loadHomePage() {
 
     // Image principale
     if (latestGames[0]) {
-      const mainImageDiv = document.getElementById("maingame");
+      const mainImageDiv = document.getElementById("mainbanner");
       // Changer le background-image de la div
       mainImageDiv.style.backgroundImage = `url(${latestGames[0].background_image})`;
     }
@@ -109,3 +109,4 @@ async function loadHomePage() {
 // Initialisation
 
 document.addEventListener("DOMContentLoaded", loadHomePage);
+
