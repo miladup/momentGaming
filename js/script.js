@@ -37,19 +37,31 @@ function displayGameCard(game, containerId, showgenre = true) {
   const title = document.createElement("h3");
   title.textContent = game.name;
 
-  // Étoiles
-  const etoileContainer = document.createElement("div");
-  etoileContainer.classList.add("etoile-note");
+  // Étoiles/ note
+const etoileContainer = document.createElement("div");
+etoileContainer.classList.add("etoile-note");
+
+if (game.rating && game.rating > 0) {
   const maxEtoile = 5;
-  const roundedRating = Math.round(game.rating || 0);
+  const roundedRating = Math.round(game.rating);
 
   for (let i = 1; i <= maxEtoile; i++) {
     const etoile = document.createElement("span");
     etoile.classList.add("star");
-    if (i <= roundedRating) etoile.classList.add("filled");
-    etoile.innerHTML = "★";
+
+    if (i <= roundedRating) {
+      etoile.classList.add("filled");
+    }
+
+    etoile.textContent = "★";
     etoileContainer.appendChild(etoile);
   }
+} else {
+  const noRating = document.createElement("p");
+  noRating.textContent = "Pas encore de note";
+  noRating.classList.add("no-rating");
+  etoileContainer.appendChild(noRating);
+}
 
   // Genres
 let genres = '';
@@ -109,4 +121,3 @@ async function loadHomePage() {
 // Initialisation
 
 document.addEventListener("DOMContentLoaded", loadHomePage);
-

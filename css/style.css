@@ -157,12 +157,6 @@ main {
   }
 }
 
-@media (max-width: 900px) {
-  .games-list {
-    margin-top: 10%;
-  }
-}
-
 @media (max-width: 600px) {
   .game-card {
     width: 100%;
