@@ -62,13 +62,21 @@ function displayStores(stores) {
 function displayRating(rating) {
     const chiffreContainer = document.getElementById("chiffre-note");
     const etoileContainer = document.getElementById("etoile-note");
-    
+
+    // Si pas de note ou note = 0
+    if (!rating || rating === 0) {
+        chiffreContainer.textContent = "Pas encore de note";
+        etoileContainer.innerHTML = "";
+        return;
+    }
+
+    // Affichage normal si la note existe
     chiffreContainer.textContent = `${rating.toFixed(1)} / 5`;
     etoileContainer.innerHTML = "";
-    
+
     const maxEtoile = 5;
     const roundedRating = Math.round(rating);
-    
+
     for (let i = 1; i <= maxEtoile; i++) {
         const etoile = document.createElement("span");
         etoile.classList.add("star");
