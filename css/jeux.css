@@ -2,13 +2,14 @@
 .page-jeux{
   width:95%;
   margin: auto;
+  margin-top: 5%;
 }
 .games-list {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
   justify-content: space-between;
-  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .game-card {
@@ -77,8 +78,8 @@
 }
 
 @media (max-width: 900px) {
-  .games-list {
-    margin-top: 10%;
+  .page-jeux {
+    margin-top: 8%;
   }
 }
 
